@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="Time to input your Sleep stats!"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sleepText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="How much did you sleep last night?"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="0"
+        android:valueTo="16"
+        app:layout_constraintStart_toStartOf="@+id/sleepText1"
+        app:layout_constraintTop_toBottomOf="@+id/sleepText1" />
+
+    <TextView
+        android:id="@+id/sleepText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="How did you feel this AM?"
+        app:layout_constraintStart_toStartOf="@+id/sleepText1"
+        app:layout_constraintTop_toBottomOf="@+id/sliderHours" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderMood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="1"
+        android:valueTo="10"
+        app:layout_constraintStart_toStartOf="@+id/sleepText2"
+        app:layout_constraintTop_toBottomOf="@+id/sleepText2" />
+
+    <TextView
+        android:id="@+id/sleepText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Additional Notes:"
+        app:layout_constraintStart_toStartOf="@+id/sleepText2"
+        app:layout_constraintTop_toBottomOf="@+id/sliderMood" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintStart_toStartOf="@+id/sleepText3"
+        app:layout_constraintTop_toBottomOf="@+id/sleepText3" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="@+id/sleepText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/avgSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="70dp"
+        android:background="@color/teal_200"
+        android:text="Average Hours of Sleep: 8 "
+        app:layout_constraintStart_toStartOf="@+id/saveButton"
+        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sleepRV"
+        android:layout_width="409dp"
+        android:layout_height="353dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgSleep" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
