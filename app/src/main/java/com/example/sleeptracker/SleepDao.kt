@@ -16,5 +16,11 @@ interface SleepDao {
     @Insert
     fun insert(sleep: SleepEntity)
 
+    @Query("SELECT AVG(hoursSleep) FROM sleep_table")
+    fun getAvgSleep(): Float
+
+    @Query("SELECT AVG(moodRating) FROM sleep_table")
+    fun getAvgMood(): Float
+
 
 }
